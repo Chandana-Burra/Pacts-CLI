@@ -49,6 +49,13 @@ import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 @Provider("food-provider")
+@PactBroker(url = "http://localhost:9292",
+        enablePendingPacts = "true",
+        providerTags = "main",
+        includeWipPactsSince = "2026-06-26"
+
+)
+
 @PactFolder("target/pacts")
 public class OmsProviderVerification {
 
