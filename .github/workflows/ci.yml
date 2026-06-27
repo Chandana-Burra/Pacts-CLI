@@ -32,7 +32,7 @@ jobs:
       - name: 2. Run Consumer Tests & Publish Contracts
 
         run: |
-          mvn -Dtest=PosOmsConsumerPactTest test
+          mvn -Dtest=PosConsumerPactTest test
 
       - name: 3. Consumer Publish Contracts to the Borker
 
@@ -55,7 +55,7 @@ jobs:
 
         run: |
           pact-broker record-deployment \
-            --pacticipant oms-provider \
+            --pacticipant food-provider \
             --version ${{ github.sha }} \
             --environment production \
             --broker-base-url http://127.0.0.1:9292
